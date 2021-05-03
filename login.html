@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Connexion</button>
+                <button type="button" class="toggle-btn" onclick="register()">S'inscrire</button>
+            </div>
+            <!-- <div class="social-icons">
+            <img class="i" src="assets/image/fbook.png">
+            <img class="i" src="assets/image/twitter.png">
+            <img class="i" src="assets/image/gp.png">  
+            </div> -->
+            <form id="login" class="the-group">
+                <input type="text" class="the-field" placeholder="User Id" required>
+                <input type="text" class="the-field" placeholder="Entrer un mot de passe" required>
+                <input type="checkbox" class="check-box"><span class="spana">Se sovenir de moi</span class="spana">
+                <button type="submit" class="submit-btn">Se connecter</button>
+            </form>
+            <form id="register" class="the-group">
+                <input type="text" class="the-field" placeholder="User Id" required>
+                <input type="email" class="the-field" placeholder="Email Id" required>
+                <input type="text" class="inpua-field" placeholder="Entrer un mot de passe" required>
+                <input type="checkbox" class="check-box"><span class="spana">J'adhère aux conditions</span class="spana">
+                <button type="submit" class="submit-btn">S'inscrire</button>
+            </form>
+        </div>
+    
+    </div>
+
+
+
+
+<script>
+
+    var x = document.getElementById("login");
+    var y = document.getElementById("register");
+    var z = document.getElementById("btn");
+
+    function register() {
+        x.style.left = "-400px";
+        y.style.left = "50px";
+        z.style.left= "110px";
+    }
+
+
+    function login() {
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left= "0px";
+    }
+
+
+
+
+
+
+</script>
+
+
+

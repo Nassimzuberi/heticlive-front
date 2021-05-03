@@ -98,9 +98,9 @@
     flex: 0;
 }
 
-input {  /* doubts */
+/* input {  
     display: none;
-}
+}  */
 
 #contact {
     width: 150px;
@@ -137,17 +137,10 @@ input {  /* doubts */
 /* 
 LOGIN  */
 
-* {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-}
-
-
 .hero {
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../img/backgroundLogin.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(/assets/image/backgroundLogin.jpg);  
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -202,7 +195,7 @@ LOGIN  */
 }
 
 
-.social-icons img {
+.social-icons i {
     width: 30px;
     margin: 0 12px;
     box-shadow: 0 0 20px 0 #7f7f7f3d;
@@ -211,7 +204,7 @@ LOGIN  */
 }
 
 
-.input-group {
+.the-group {
     top:  180px;
     position: absolute;
     width: 280px;
@@ -219,7 +212,7 @@ LOGIN  */
 }
 
 
-.input-field {
+.the-field {
     width: 100%;
     padding: 10px 0;
     margin: 5px 0;
@@ -250,7 +243,7 @@ LOGIN  */
 }
 
 
-span {
+.spana {
     color: #777;
     font-size: 12px;
     bottom: 68px;
