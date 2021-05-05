@@ -1,9 +1,8 @@
-import {Channel, Home, Navbar, Sidebar} from './components'
+import {Channel, Home, Navbar} from './components'
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
 } from "react-router-dom";
 
 function App() {
@@ -11,13 +10,8 @@ function App() {
       <Router>
         <Navbar/>
         <Switch>
-            <Route exact path={"/"}>
-                <Home/>
-            </Route>
-
-            <Route path={"/channels"}>
-                <Channel />
-            </Route>
+            <Route exact path={"/"} component={Home} />
+            <Route path={"/channels/:id"} component={Channel}/>
         </Switch>
       </Router>
 

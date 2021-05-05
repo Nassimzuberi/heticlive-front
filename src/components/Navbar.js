@@ -1,13 +1,11 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import useModal from "./useModal";
-import Modale from "./Modale";
-import Login from "./Login";
-import Signup from "./Signup";
-
-const Navbar = () =>{
-    // const { isShowing, toggle } = useModal();
-    const { isShowing, toggle } = useModal();
+import BtnLogin from "./BtnLogin";
+import BtnSignup from "./BtnSignup";
+import {connect} from 'react-redux'
+import {logout} from '../store/user/userAction'
+const Navbar = ({user,logout}) =>{
     return(
         <header>
             <nav className="flex items-center justify-between flex-wrap bg-green-900 p-6 sticky">
@@ -32,12 +30,14 @@ const Navbar = () =>{
                     </div>
 
                     <div>
-                        {/*<a href="#" onClick={toggle}*/}
-                        {/*   className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Connexion</a>*/}
-                        {/*<Modale isShowing={isShowing} hide={toggle} > <Login /> </Modale>*/}
-                        <a href="#" onClick={toggle}
-                           className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 ml-4 lg:mt-0">inscription</a>
-                        <Modale isShowing={isShowing} hide={toggle} > <Signup /> </Modale>
+                        {user.isLogged ? (
+                            <a href={'#'} className={"text-white hover:text-gray-200"} onClick={logout}>Deconnexion</a>
+                        ) : (
+                            <>
+                                <BtnLogin />
+                                <BtnSignup />
+                            </>
+                        )}
 
                     </div>
                 </div>
@@ -49,5 +49,5 @@ const Navbar = () =>{
 
 
 
-export default Navbar
+export default connect(state => {return {user: state} } ,{logout})(Navbar)
 

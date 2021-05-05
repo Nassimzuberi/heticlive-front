@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../heticlive/.idea/heticlive.iml" filepath="$PROJECT_DIR$/../heticlive/.idea/heticlive.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/heticlive-front.iml" filepath="$PROJECT_DIR$/.idea/heticlive-front.iml" />
     </modules>
   </component>

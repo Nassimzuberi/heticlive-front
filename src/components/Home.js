@@ -11,11 +11,11 @@ export default class Home extends React.Component {
         }
     }
     componentDidMount() {
-        // axios.get("http://localhost:3001/users")
-        //     .then(res => {
-        //         const channels = res.data;
-        //         this.setState({channels,loading:false})
-        //     })
+        axios.get("http://localhost:3001/channels")
+            .then(res => {
+                const channels = res.data;
+                this.setState({channels,loading:false})
+            })
     }
 
     render() {
@@ -27,10 +27,12 @@ export default class Home extends React.Component {
                         <p className={"w-full h-4 bg-gray-400"}></p>
                     </div>
                 ) : ""}
-                {this.state.channels.map(c => (
-                        <Link to={"/channels"} className={" p-5"}>
-                            <div className="w-full h-52 bg-gray-400"></div>
-                            <p>Nom du channel</p>
+                {this.state.channels.map( (c,i) => (
+                        <Link key={i} to={"/channels/" + c._id} className={" p-5"}>
+                            <div className="w-full h-52 bg-gray-400 relative">
+                                {c.state ? <span className="absolute block w-3 h-3 bg-red-500 rounded top-2 right-2 animate-pulse"></span> : ""}
+                            </div>
+                            <p>{c.name}</p>
                         </Link>
                     )
                 )}
