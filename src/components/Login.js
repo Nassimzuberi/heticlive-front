@@ -66,7 +66,7 @@ import {login} from '../store/user/userAction'
                 <form action="" onSubmit={(e) => this.handleSubmit(e)}>
                     <input type="text" name={"username"} placeholder={"Pseudo"} className={"block w-full p-2 my-2 border-gray-300 border"} value={this.state.username} onChange={(e) => this.handleUsername(e)}/>
                     <input type="password" name={"password"} placeholder={"Mot de passe"} className={"block w-full p-2 my-2 border-gray-300 border"} value={this.state.password} onChange={(e) => this.handlePassword(e)}/>
-                    <button type={"submit"} className={"block mx-auto px-5 py-2 my-3 bg-white border-black border rounded-md hover:text-green-500"}> S'inscrire</button>
+                    <button type={"submit"} className={"block mx-auto px-5 py-2 my-3 bg-white border-black border rounded-md hover:text-green-500"}> Se connecter</button>
                 </form>
             </div>
 
