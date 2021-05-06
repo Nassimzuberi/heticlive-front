@@ -16,7 +16,7 @@ const Dropdown = ({user,logout}) => {
                 </svg>
             </button>
             <ul className={"dropdown-menu absolute text-gray-700 pt-1 "+ show} >
-                <li className=""><Link to={"/"} onMouseDown={(e) => {e.preventDefault()}} onClick={() => toggle(!isShow)}
+                <li className=""><Link to={"/mychannels"} onMouseDown={(e) => {e.preventDefault()}} onClick={() => toggle(!isShow)}
                     className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                     href="#">Mon compte</Link></li>
                 <li className="">

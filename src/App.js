@@ -4,6 +4,7 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
+import MyChannels from "./components/MyChannels";
 
 function App() {
     const user = "Blabla"
@@ -13,6 +14,7 @@ function App() {
         <Switch>
             <Route exact path={"/"} component={Home} />
             <Route path={"/channels/:id"} component={Channel}/>
+            <Route path={"/mychannels"} component={MyChannels}/>
         </Switch>
       </Router>
 

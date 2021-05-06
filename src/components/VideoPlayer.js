@@ -1,6 +1,5 @@
 import React from 'react';
 import videojs from 'video.js'
-import axios from 'axios';
 import 'video.js/dist/video-js.css';
 
 export default class VideoPlayer extends React.Component {
@@ -9,30 +8,45 @@ export default class VideoPlayer extends React.Component {
         super(props);
 
         this.state = {
+            resolution: 720,
             stream: false,
             videoJsOptions: null
         }
     }
 
     componentDidMount() {
-
-            this.setState({
-                stream: true,
-                videoJsOptions: {
-                    autoplay: false,
-                    controls: true,
-                    sources: [{
-                        src: 'http://localhost:8888/live/'+ this.props.channel.stream_key + '/index.m3u8',
-                        type: 'application/x-mpegURL'
-                    }],
-                    fluid: true,
-                }
-            }, () => {
-                this.player = videojs(this.videoNode, this.state.videoJsOptions, function onPlayerReady() {
-                    console.log('onPlayerReady', this)
-                });
+        this.setState({
+            stream: true,
+            videoJsOptions: {
+                autoplay: false,
+                controls: true,
+                sources: [{
+                    src: 'http://localhost:8888/live/'+ this.props.channel.stream_key + '_'+ this.state.resolution + '/index.m3u8',
+                    type: 'application/x-mpegURL'
+                }],
+                fluid: true,
+            }
+        }, () => {
+            this.player = videojs(this.videoNode, this.state.videoJsOptions, function onPlayerReady() {
+                console.log('onPlayerReady', this)
             });
+        });
     }
+    callVideoPlayer(resolution){
+        this.setState({
+            videoJsOptions: {
+                autoplay: false,
+                controls: true,
+                sources: [{
+                    src: 'http://localhost:8888/live/'+ this.props.channel.stream_key + '_'+ resolution + '/index.m3u8',
+                    type: 'application/x-mpegURL'
+                }],
+                fluid: true,
+            }
+        });
+    }
+
+
 
     componentWillUnmount() {
         if (this.player) {
@@ -56,6 +70,12 @@ export default class VideoPlayer extends React.Component {
                                 <span className={"block w-2 h-2 rounded bg-gray-500 mx-2"}></span>
                                 Hors ligne</p>
                         )}
+
+                    </div>
+                    <div className="absolute right-2 top-4">
+                        <button onClick={() => this.callVideoPlayer(720)} className={"mx-3"}>720</button>
+                        <button onClick={() => this.callVideoPlayer(480)} className={"mx-3"}>480</button>
+                        <button onClick={() => this.callVideoPlayer(360)} className={"mx-3"}>360</button>
                     </div>
 
                     <video ref={node => this.videoNode = node} className="video-js vjs-big-play-centered"/>
