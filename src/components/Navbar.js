@@ -1,14 +1,14 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import useModal from "./useModal";
 import BtnLogin from "./BtnLogin";
 import BtnSignup from "./BtnSignup";
 import {connect} from 'react-redux'
-import {logout} from '../store/user/userAction'
-const Navbar = ({user,logout}) =>{
+import Dropdown from "./Dropdown";
+
+const Navbar = ({user}) =>{
     return(
         <header>
-            <nav className="flex items-center justify-between flex-wrap bg-green-900 p-6 sticky">
+            <nav className="flex items-center justify-between flex-wrap bg-gray-900 p-6 sticky z-30">
                 <div className="flex items-center flex-shrink-0 text-white mr-6">
                     <span className="font-semibold text-xl tracking-tight">Hetic Live</span>
                 </div>
@@ -30,9 +30,7 @@ const Navbar = ({user,logout}) =>{
                     </div>
 
                     <div>
-                        {user.isLogged ? (
-                            <a href={'#'} className={"text-white hover:text-gray-200"} onClick={logout}>Deconnexion</a>
-                        ) : (
+                        {user.isLogged ? <Dropdown />: (
                             <>
                                 <BtnLogin />
                                 <BtnSignup />
@@ -49,5 +47,5 @@ const Navbar = ({user,logout}) =>{
 
 
 
-export default connect(state => {return {user: state} } ,{logout})(Navbar)
+export default connect(state => {return {user: state} })(Navbar)
 

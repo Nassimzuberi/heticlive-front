@@ -21,6 +21,7 @@ export default class Home extends React.Component {
     render() {
         return (
             <div className="grid grid-cols-6 gap-x-2">
+
                 {this.state.loading ? (
                     <div  className={"animate-pulse p-5"}>
                         <div className="w-full h-52 bg-gray-400 mb-2"></div>

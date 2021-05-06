@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 function App() {
+    const user = "Blabla"
   return (
       <Router>
         <Navbar/>
