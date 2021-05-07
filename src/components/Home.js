@@ -11,7 +11,7 @@ export default class Home extends React.Component {
         }
     }
     componentDidMount() {
-        axios.get("http://localhost:3001/channels")
+        axios.get("http://heticlive.herokuapp.com/channels")
             .then(res => {
                 const channels = res.data;
                 this.setState({channels,loading:false})
