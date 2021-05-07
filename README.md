@@ -1,7 +1,19 @@
-# Getting Started with Create React App
+# Projet Twitch coté frond avec ReactJS
+lien en ligne : https://heticlive.netlify.app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Nous sommes deux à avoir travailler sur ce projet : Xavier JEANTIS et Nassim ZUBERI.
 
+## Réalisation
+Intégration de Tailwindcss \
+Utilisation d'axios pour faire les requêtes HTTP \
+Pour l'authentification nous avons utiliser Redux \
+Mise en place de la vidéo avec videojs \
+
+## Problèmes rencontrés
+
+Sachant que notre server media créait les bons canaux pour la multi résolution, il manquait un paramètre pour que le lecteur l'ajoute automatiquement \
+Nous avons donc tenté de changer la résolution manuellement sauf que le lecteur ne revenait pas quand on le coupait pour le relancer \
+Nous avons donc tenter de juste changer la source de la vidéo mais elle ne se rechargait pas 
 ## Available Scripts
 
 In the project directory, you can run:

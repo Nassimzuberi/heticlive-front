@@ -7,7 +7,7 @@ export default class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            channels: [1,2,3],
+            channels: [],
             loading: true
         }
     }

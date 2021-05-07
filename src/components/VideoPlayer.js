@@ -1,7 +1,7 @@
 import React from 'react';
 import videojs from 'video.js'
 import 'video.js/dist/video-js.css';
-import {url} from '../config'
+import {nms_url} from '../config'
 
 export default class VideoPlayer extends React.Component {
 
@@ -22,7 +22,7 @@ export default class VideoPlayer extends React.Component {
                 autoplay: false,
                 controls: true,
                 sources: [{
-                    src: url + ':8888/live/'+ this.props.channel.stream_key + '_'+ this.state.resolution + '/index.m3u8',
+                    src: nms_url + '/live/'+ this.props.channel.stream_key + '_'+ this.state.resolution + '/index.m3u8',
                     type: 'application/x-mpegURL'
                 }],
                 fluid: true,
@@ -39,7 +39,7 @@ export default class VideoPlayer extends React.Component {
                 autoplay: false,
                 controls: true,
                 sources: [{
-                    src: url + ':8888/live/'+ this.props.channel.stream_key + '_'+ resolution + '/index.m3u8',
+                    src: nms_url + '/live/'+ this.props.channel.stream_key + '_'+ resolution + '/index.m3u8',
                     type: 'application/x-mpegURL'
                 }],
                 fluid: true,
