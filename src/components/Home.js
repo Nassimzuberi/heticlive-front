@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from "react-router-dom";
 import axios from 'axios'
+import {url} from '../config'
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -11,7 +12,7 @@ export default class Home extends React.Component {
         }
     }
     componentDidMount() {
-        axios.get("http://heticlive.herokuapp.com/channels")
+        axios.get(url + "/channels")
             .then(res => {
                 const channels = res.data;
                 this.setState({channels,loading:false})

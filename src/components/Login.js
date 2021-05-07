@@ -2,6 +2,8 @@ import React from 'react'
 import axios from "axios";
 import {connect} from 'react-redux'
 import {login} from '../store/user/userAction'
+import {url} from '../config'
+
  class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -47,14 +49,14 @@ import {login} from '../store/user/userAction'
             username: this.state.username,
             password: this.state.password,
         }
-        axios.post('http://localhost:3001/users/login',data,config)
+        axios.post(url + '/users/login',data,config)
             .then(res => {
                 this.props.login(res.data.data, res.data.token)
                 this.resetForm()
             })
             .catch(err => {
                 const error = err.response.data.error
-                this.setState({error: error})
+                this.setState({error})
                 this.resetPassword()
             })
     }

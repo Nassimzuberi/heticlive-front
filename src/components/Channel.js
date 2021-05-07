@@ -3,8 +3,8 @@ import axios from "axios";
 import socketIOClient from "socket.io-client"
 import {connect} from "react-redux";
 import VideoPlayer from "./VideoPlayer";
+import {url} from '../config'
 
-const ENDPOINT = "http://localhost:3001"
 
 let socket
 class Channel extends React.Component {
@@ -17,14 +17,14 @@ class Channel extends React.Component {
             loading: true,
             error: false
         }
-        socket = socketIOClient(ENDPOINT, {
+        socket = socketIOClient(url, {
             query: {roomId: this.props.match.params.id}
         })
     }
 
     componentDidMount() {
         const {id} = this.props.match.params
-        axios.get("http://localhost:3001/channels/" + id )
+        axios.get(url + "/channels/" + id )
             .then( res => {
 
                 const {data} = res

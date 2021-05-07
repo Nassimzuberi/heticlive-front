@@ -1,5 +1,7 @@
 import React from 'react'
 import axios from "axios";
+import {url} from '../config'
+
 
 export default class Login extends React.Component {
     constructor(props) {
@@ -53,7 +55,7 @@ export default class Login extends React.Component {
             password: this.state.password,
             confirmPassword: this.state.confirmPassword,
         }
-        axios.post('http://localhost:3001/users',data,config)
+        axios.post(url + '/users',data,config)
             .then(res => {
                 this.resetForm()
                 console.log(res)

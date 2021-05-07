@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from "react-redux";
 import axios from "axios";
+import {url} from '../config'
 
 class CreateChannel extends React.Component {
     constructor(props) {
@@ -26,7 +27,7 @@ class CreateChannel extends React.Component {
                 "Access-Control-Allow-Origin": "*",
             }
         }
-        axios.post('http://localhost:3001/channels',data,config)
+        axios.post(url + '/channels',data,config)
             .then(res => this.setState({name: ""}))
     }
     render() {

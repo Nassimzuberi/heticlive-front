@@ -3,7 +3,7 @@ import axios from "axios";
 import {connect} from "react-redux";
 import {Link,Redirect} from "react-router-dom";
 import CreateChannel from "./CreateChannel";
-
+import {url} from '../config'
 
 class MyChannels extends React.Component {
     constructor(props) {
@@ -16,7 +16,7 @@ class MyChannels extends React.Component {
     }
 
     componentDidMount() {
-            axios.get('http://localhost:3001/users/' + this.props.user.data._id + "/channels")
+            axios.get(url + '/users/' + this.props.user.data._id + "/channels")
                 .then(res => this.setState({
                     loading:false,
                     channels: res.data
